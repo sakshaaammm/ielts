@@ -1,0 +1,238 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Light Mode - Futuristic Purple/Black Theme */
+    --background: 0 0% 98%;
+    --foreground: 240 9% 9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 9% 9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 9% 9%;
+
+    /* Futuristic Purple Primary */
+    --primary: 249 82% 70%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 249 82% 80%;
+    --primary-dark: 249 82% 60%;
+
+    /* Deep Black Secondary */
+    --secondary: 240 9% 5%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 5% 96%;
+    --muted-foreground: 240 4% 46%;
+
+    --accent: 249 82% 95%;
+    --accent-foreground: 249 82% 20%;
+
+    /* Success Purple */
+    --success: 142 76% 36%;
+    --success-foreground: 355 100% 97%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 6% 90%;
+    --input: 240 6% 90%;
+    --ring: 249 82% 70%;
+
+    /* 3D Glassmorphism Effects */
+    --glass-bg: 249 82% 70% / 0.1;
+    --glass-border: 249 82% 70% / 0.2;
+    --glow-primary: 249 82% 70% / 0.5;
+    --glow-secondary: 240 9% 5% / 0.3;
+
+    /* Futuristic Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(249 82% 70%), hsl(249 82% 80%));
+    --gradient-dark: linear-gradient(135deg, hsl(240 9% 5%), hsl(240 9% 15%));
+    --gradient-glass: linear-gradient(145deg, hsla(249, 82%, 70%, 0.1), hsla(249, 82%, 70%, 0.05));
+    --gradient-hero: linear-gradient(135deg, hsl(240 9% 5%), hsl(249 82% 20%));
+
+    /* 3D Shadows */
+    --shadow-3d: 0 8px 32px hsla(249, 82%, 70%, 0.3), 0 4px 16px hsla(249, 82%, 70%, 0.1);
+    --shadow-glow: 0 0 30px hsla(249, 82%, 70%, 0.4);
+    --shadow-card: 0 10px 30px hsla(240, 9%, 5%, 0.1);
+
+    /* Animations */
+    --transition-3d: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    --transition-glow: all 0.3s ease;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark Mode - Deep Black with Purple Accents */
+    --background: 240 9% 5%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 9% 8%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 9% 8%;
+    --popover-foreground: 0 0% 98%;
+
+    /* Enhanced Purple for Dark Mode */
+    --primary: 249 82% 70%;
+    --primary-foreground: 240 9% 5%;
+    --primary-light: 249 82% 80%;
+    --primary-dark: 249 82% 60%;
+
+    /* Lighter Secondary for Dark Mode */
+    --secondary: 0 0% 95%;
+    --secondary-foreground: 240 9% 5%;
+
+    --muted: 240 9% 15%;
+    --muted-foreground: 240 5% 65%;
+
+    --accent: 240 9% 15%;
+    --accent-foreground: 249 82% 70%;
+
+    --success: 142 76% 36%;
+    --success-foreground: 355 100% 97%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 9% 20%;
+    --input: 240 9% 20%;
+    --ring: 249 82% 70%;
+
+    /* Enhanced Dark Mode Glass */
+    --glass-bg: 249 82% 70% / 0.15;
+    --glass-border: 249 82% 70% / 0.3;
+    --glow-primary: 249 82% 70% / 0.8;
+    --glow-secondary: 249 82% 70% / 0.4;
+
+    /* Dark Mode Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(249 82% 70%), hsl(249 82% 80%));
+    --gradient-dark: linear-gradient(135deg, hsl(240 9% 5%), hsl(240 9% 15%));
+    --gradient-glass: linear-gradient(145deg, hsla(249, 82%, 70%, 0.15), hsla(249, 82%, 70%, 0.08));
+    --gradient-hero: linear-gradient(135deg, hsl(240 9% 5%), hsl(249 82% 20%));
+
+    /* Enhanced Dark Mode Shadows */
+    --shadow-3d: 0 8px 32px hsla(249, 82%, 70%, 0.4), 0 4px 16px hsla(249, 82%, 70%, 0.2);
+    --shadow-glow: 0 0 40px hsla(249, 82%, 70%, 0.6);
+    --shadow-card: 0 10px 30px hsla(240, 9%, 5%, 0.5);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* 3D Glass Effects */
+  .glass-card {
+    background: linear-gradient(145deg, hsla(249, 82%, 70%, 0.1), hsla(249, 82%, 70%, 0.05));
+    backdrop-filter: blur(20px);
+    border: 1px solid hsla(249, 82%, 70%, 0.2);
+    box-shadow: 0 8px 32px hsla(249, 82%, 70%, 0.1);
+    transition: var(--transition-3d);
+  }
+
+  .glass-card:hover {
+    transform: translateY(-5px) rotateX(5deg);
+    box-shadow: var(--shadow-3d);
+  }
+
+  /* Glow Effects */
+  .glow-primary {
+    box-shadow: 0 0 20px hsla(249, 82%, 70%, 0.4);
+    transition: var(--transition-glow);
+  }
+
+  .glow-primary:hover {
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* 3D Button Effects */
+  .btn-3d {
+    transform: perspective(1000px) rotateX(0deg);
+    transition: var(--transition-3d);
+    box-shadow: var(--shadow-card);
+  }
+
+  .btn-3d:hover {
+    transform: perspective(1000px) rotateX(-5deg) translateY(-2px);
+    box-shadow: var(--shadow-3d);
+  }
+
+  /* Tilt Animation */
+  .tilt {
+    transform-style: preserve-3d;
+    transition: var(--transition-3d);
+  }
+
+  .tilt:hover {
+    transform: perspective(1000px) rotateY(5deg) rotateX(5deg);
+  }
+
+  /* Custom Animations */
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  @keyframes glow {
+    from { box-shadow: 0 0 20px hsla(249, 82%, 70%, 0.4); }
+    to { box-shadow: 0 0 30px hsla(249, 82%, 70%, 0.8); }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
